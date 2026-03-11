@@ -607,18 +607,325 @@ git status
 The goal is simple:
 feel comfortable opening the terminal, moving through folders, and checking Git status.
 
+
+# Part 2 – Your First AI Program
+
+Now that you have:
+
+- installed Git
+- cloned the repository
+- opened it in VS Code
+
+you will write your **first small AI program**.
+
+The goal is simple:
+
+You will build a **very small AI agent** that generates a short message.
+
+Example:
+
+Input:
+
+```
+
+Write a motivational message for programmers
+
+```
+
+Output (example):
+
+```
+
+"Every bug you fix makes you a better developer."
+
+```
+
+We will use **Google ADK (Agent Development Kit)**.
+
+ADK is a framework for building AI agents that can reason and perform tasks using large language models like Gemini. :contentReference[oaicite:0]{index=0}
+
+Do not worry — we will only use **a very small example**.
+
 ---
 
-# 20. Final note
+# What You Will Build
 
-Nobody starts as an expert.
-If this is your first time using Git, GitHub, VS Code, or a terminal, that is completely fine.
+You will create a simple AI agent called:
 
-The important thing is:
+```
 
-* follow the steps carefully
-* stay calm
-* learn one command at a time
+MotivationAgent
+
+````
+
+Its job:
+
+- take a user prompt
+- generate a short motivational message
+
+---
+
+# 1. Install Python
+
+First check if Python is already installed.
+
+Open the terminal and run:
+
+```bash
+python --version
+````
+
+If you see something like:
+
+```
+Python 3.x.x
+```
+
+You are ready.
+
+If Python is **not installed**, install it from:
+
+```
+https://python.org
+```
+
+During installation enable:
+
+```
+Add Python to PATH
+```
+
+---
+
+# 2. Create a Python File
+
+Inside your repository create a new file.
+
+In VS Code:
+
+1. Right click in the file explorer
+2. Click **New File**
+3. Name it:
+
+```
+agent.py
+```
+
+---
+
+# 3. Install Google ADK
+
+In the terminal inside your repository run:
+
+```bash
+pip install google-adk
+```
+
+This installs the **Agent Development Kit**.
+
+---
+
+# 4. Add Your First AI Agent Code
+
+Open the file `agent.py` and paste the following code.
+
+```python
+from adk import Agent
+
+# Create a simple AI agent
+agent = Agent(
+    name="MotivationAgent",
+    model="gemini-2.5-flash",
+    instruction="You generate short motivational messages for programmers."
+)
+
+# Ask the agent something
+response = agent.run("Write a motivational sentence for a beginner programmer.")
+
+print(response)
+```
+
+Save the file.
+
+---
+
+# 5. Run Your Program
+
+In the terminal run:
+
+```bash
+python agent.py
+```
+
+Your AI agent should generate a motivational message.
+
+Example output:
+
+```
+"Every line of code you write is one step closer to mastery."
+```
+
+Your output may look different. That is normal.
+
+---
+
+# 6. Modify the Prompt
+
+Now try changing the prompt.
+
+Example:
+
+```python
+response = agent.run("Write a funny motivational message for programmers.")
+```
+
+Or:
+
+```python
+response = agent.run("Give advice to a student learning Python.")
+```
+
+Run the program again:
+
+```bash
+python agent.py
+```
+
+See how the output changes.
+
+---
+
+# 7. Your Small Task
+
+Modify the agent so it does **one of the following**:
+
+Option A – Study Assistant
+
+```
+The agent explains programming concepts in simple words.
+```
+
+Example prompt:
+
+```
+Explain what a variable is in programming.
+```
+
+---
+
+Option B – Debug Helper
+
+```
+The agent gives tips when someone has a coding error.
+```
+
+Example prompt:
+
+```
+I get a "SyntaxError" in Python. What should I check?
+```
+
+---
+
+Option C – Code Joke Generator
+
+```
+The agent generates short programming jokes.
+```
+
+Example prompt:
+
+```
+Tell a programming joke.
+```
+
+---
+
+# 8. Bonus Challenge (Optional)
+
+Make the program interactive.
+
+Replace the code with:
+
+```python
+from adk import Agent
+
+agent = Agent(
+    name="MotivationAgent",
+    model="gemini-2.5-flash",
+    instruction="You generate helpful responses for beginner programmers."
+)
+
+user_input = input("Ask the AI something: ")
+
+response = agent.run(user_input)
+
+print("\nAI Response:\n")
+print(response)
+```
+
+Now run:
+
+```bash
+python agent.py
+```
+
+Type something like:
+
+```
+How do I learn programming faster?
+```
+
+The AI will respond.
+
+---
+
+# 9. Commit Your Work
+
+Once your program works:
+
+Check your changes:
+
+```bash
+git status
+```
+
+Add the file:
+
+```bash
+git add agent.py
+```
+
+Create a commit:
+
+```bash
+git commit -m "Add first AI agent"
+```
+
+Push your branch:
+
+```bash
+git push
+```
+
+---
+
+# What You Just Learned
+
+You have now:
+
+* written your **first Python program**
+* installed a **Python library**
+* created a **simple AI agent**
+* run a program in the terminal
+* committed your code with Git
+
+This is the **first step into AI programming**.
+
+Great job!
+
+```
+
 
 ```
 
