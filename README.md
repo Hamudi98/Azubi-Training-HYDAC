@@ -622,5 +622,5 @@ The important thing is:
 
 ```
 
-If you want, I can now turn this into a **more polished company-internal README** with HYDAC wording and placeholders for your exact repo name.
+
 ```
