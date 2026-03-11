@@ -323,7 +323,7 @@ You will need:
 
 # 8. Get the repository URL
 
-Your trainer will provide you with the repository URL.
+I will provide you with the repository URL.
 
 It will look similar to this:
 
